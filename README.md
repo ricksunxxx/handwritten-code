@@ -5,3 +5,4 @@
 [手写数组 push 方法](https://github.com/ricksunxxx/handwritten-code/blob/main/src/array-push.js)<br/>
 [手写数组 pop 方法](https://github.com/ricksunxxx/handwritten-code/blob/main/src/array-pop.js)<br/>
 [手写 instanceof 方法](https://github.com/ricksunxxx/handwritten-code/blob/main/src/instanceof.js)<br/>
+[手写 parseQueryString 方法解析 URL 参数](https://github.com/ricksunxxx/handwritten-code/blob/main/src/parseQueryString.js)<br/>
