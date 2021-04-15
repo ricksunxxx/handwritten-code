@@ -1,5 +1,5 @@
 /**
- * 把URL参数解析成一个对象并返回.
+ * 把URL参数解析成一个对象并返回
  */
 
 function parseQueryString(url) {
@@ -22,18 +22,8 @@ function parseQueryString(url) {
 
 // test case
 // 输出：{a: "#1", b: "2", c: "3"}
-console.log(
-  parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3')
-)
-console.log(
-  parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3&#top')
-)
-console.log(
-  parseQueryString('https://www.baidu.com/newspage.html#top?a=%231&b=2&c=3')
-)
-console.log(
-  parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3&')
-)
-console.log(
-  parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3&#top')
-)
+console.log(parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3'))
+console.log(parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3&#top'))
+console.log(parseQueryString('https://www.baidu.com/newspage.html#top?a=%231&b=2&c=3'))
+console.log(parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3&'))
+console.log(parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3&#top'))
