@@ -22,14 +22,18 @@ function parseQueryString(url) {
 
 // test case
 // 输出：{a: "#1", b: "2", c: "3"}
-console.log(parseQueryString('https://www.baidu.com/newspage?a=%231&b=2&c=3'))
+console.log(
+  parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3')
+)
 console.log(
   parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3&#top')
 )
 console.log(
   parseQueryString('https://www.baidu.com/newspage.html#top?a=%231&b=2&c=3')
 )
-console.log(parseQueryString('https://www.baidu.com/newspage?a=%231&b=2&c=3&'))
 console.log(
-  parseQueryString('https://www.baidu.com/newspage?a=%231&b=2&c=3&#top')
+  parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3&')
+)
+console.log(
+  parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3&#top')
 )
