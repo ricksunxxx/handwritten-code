@@ -1,5 +1,5 @@
 /**
- * 把URL参数解析成一个对象并返回
+ * 把URL参数解析成一个对象并返回.
  */
 
 function parseQueryString(url) {
