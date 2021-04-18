@@ -35,15 +35,7 @@ console.log(parseQueryString('https://www.baidu.com/newspage.html#'))
 console.log(parseQueryString('https://www.baidu.com/newspage.html?#12'))
 
 // 输出：{a: "#1", b: "2", c: "3"}
-console.log(
-  parseQueryString('https://www.baidu.com/newspage.html?a=%231&&&b=2&&c=3&')
-)
-console.log(
-  parseQueryString('https://www.baidu.com/newspage.html#top?&a=%231&b=2&c=3')
-)
-console.log(
-  parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3&')
-)
-console.log(
-  parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3&#top')
-)
+console.log(parseQueryString('https://www.baidu.com/newspage.html?a=%231&&&b=2&&c=3&'))
+console.log(parseQueryString('https://www.baidu.com/newspage.html#top?&a=%231&b=2&c=3'))
+console.log(parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3&'))
+console.log(parseQueryString('https://www.baidu.com/newspage.html?a=%231&b=2&c=3&#top'))
