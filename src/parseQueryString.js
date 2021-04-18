@@ -3,7 +3,7 @@
  */
 
 function parseQueryString(url) {
-  if (url.indexOf('?') === -1) return {} // 无参数
+  if (typeof url !== 'string' || url.indexOf('?') === -1) return {} // 无参数
 
   var queryStr = url
     .replace(/^.*\?/g, '') // 把?及?之前的字符清除
