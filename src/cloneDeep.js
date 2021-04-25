@@ -40,25 +40,51 @@
  * 
  */
 
-function cloneDeep() {}
-
-// Populate the class2type map
+// Populate the class2type map（Symbol -> ES6 ，BigInt -> ES10）
 const class2type = {}
-'Boolean Number String Function Array Date RegExp Object Error Symbol'
+'Boolean Number String Function Array Date RegExp Object Error Symbol BigInt'
   .split(' ')
   .forEach((name) => {
     class2type['[object ' + name + ']'] = name.toLowerCase()
   })
 
-// 判断类型
-function type(obj) {
+// Get the type of obj
+function getType(obj) {
+  // Match null and undefined
   if (obj == null) {
     return obj + ''
   }
 
   if (typeof obj === 'object' || typeof obj === 'function') {
-    return class2type[Object.prototype.toString.call(obj)]
-  } else {
-    return typeof obj
+    // Support: Android <=2.3 only (functionish RegExp)
+    return class2type[Object.prototype.toString.call(obj)] || 'object'
+  }
+
+  return typeof obj
+}
+
+function isObject(obj) {
+  return obj !== null && (typeof obj === 'object' || typeof obj === 'function')
+}
+
+function cloneDeep(target, map = new WeakMap()) {
+  const type = getType(target)
+
+  // ['boolean', 'number', 'string', 'symbol', 'bigint']
+  if (!isObject(target)) {
+    return target
+  }
+
+  if (['date', 'regexp'].includes(type)) {
+    return new target.constructor(target)
+  }
+
+  if ('function' === type) {
+  }
+
+  if ('array' === type) {
+  }
+
+  if ('object' === type) {
   }
 }
