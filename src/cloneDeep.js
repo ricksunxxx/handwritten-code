@@ -41,3 +41,24 @@
  */
 
 function cloneDeep() {}
+
+// Populate the class2type map
+const class2type = {}
+'Boolean Number String Function Array Date RegExp Object Error Symbol'
+  .split(' ')
+  .forEach((name) => {
+    class2type['[object ' + name + ']'] = name.toLowerCase()
+  })
+
+// 判断类型
+function type(obj) {
+  if (obj == null) {
+    return obj + ''
+  }
+
+  if (typeof obj === 'object' || typeof obj === 'function') {
+    return class2type[Object.prototype.toString.call(obj)]
+  } else {
+    return typeof obj
+  }
+}
