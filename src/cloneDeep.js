@@ -33,34 +33,35 @@
  * 思路：
  * 1、判断数值的数据类型
  * 2、根据特定数据类型进行具体的拷贝
- *   可遍历类型(Object/Array/Map/Set等)：遍历每个值递归处理
- *   不可遍历类型： 根据类型进行赋值
- *   根据类型，通过constructor构造初始值然后拷贝内容
- * 3、引用类型，记录拷贝情况，出现循环引用且已经拷贝过的对象，不另外拷贝
+ *   2.1可遍历类型：遍历每个值递归处理
+ *   2.2不可遍历类型：根据类型进行赋值
+ *   2.3根据类型，通过constructor构造初始值然后拷贝内容
+ * 3、对于引用类型拷贝时，判断是否有循环引用
  * 
  */
 
-// Populate the class2type map（Symbol -> ES6 ，BigInt -> ES10）
+// Populate the class2type map（Symbol:ES6 ，BigInt:ES10）
 const class2type = {}
 'Boolean Number String Function Array Date RegExp Object Error Symbol BigInt'
   .split(' ')
   .forEach((name) => {
-    class2type['[object ' + name + ']'] = name.toLowerCase()
+    class2type['[object ' + name + ']'] = name.toLowerCase() // 全部小写
   })
 
-// Get the type of obj
+// Get the type of object
 function getType(obj) {
   // Match null and undefined
   if (obj == null) {
     return obj + ''
   }
 
+  // 引用数据类型
   if (typeof obj === 'object' || typeof obj === 'function') {
     // Support: Android <=2.3 only (functionish RegExp)
     return class2type[Object.prototype.toString.call(obj)] || 'object'
   }
 
-  return typeof obj
+  return typeof obj // 原始数据类型
 }
 
 function isObject(obj) {
@@ -70,21 +71,25 @@ function isObject(obj) {
 function cloneDeep(target, map = new WeakMap()) {
   const type = getType(target)
 
-  // ['boolean', 'number', 'string', 'symbol', 'bigint']
+  // Boolean, Number, String, Symbol, BigInt
   if (!isObject(target)) {
     return target
   }
 
+  // Date, RegExp
   if (['date', 'regexp'].includes(type)) {
     return new target.constructor(target)
   }
 
+  // Function
   if ('function' === type) {
   }
 
+  // Array
   if ('array' === type) {
   }
 
+  // Object
   if ('object' === type) {
   }
 }
