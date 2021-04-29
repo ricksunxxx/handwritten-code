@@ -83,6 +83,7 @@ function cloneDeep(target, map = new WeakMap()) {
 
   // Function
   if ('function' === type) {
+    return target
   }
 
   // Array
