@@ -1,5 +1,4 @@
 /**
- *
  * 手写深拷贝方法cloneDeep
  * 深拷贝本质是解决共用内存地址所导致的数据错乱问题
     let obj = {
@@ -55,13 +54,14 @@ function getType(obj) {
     return obj + ''
   }
 
-  // 引用数据类型
+  // Reference type
   if (typeof obj === 'object' || typeof obj === 'function') {
     // Support: Android <=2.3 only (functionish RegExp)
     return class2type[Object.prototype.toString.call(obj)] || 'object'
   }
 
-  return typeof obj // 原始数据类型
+// Primitive type
+  return typeof obj 
 }
 
 function isObject(obj) {
