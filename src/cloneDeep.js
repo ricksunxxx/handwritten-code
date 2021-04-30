@@ -60,8 +60,8 @@ function getType(obj) {
     return class2type[Object.prototype.toString.call(obj)] || 'object'
   }
 
-// Primitive type
-  return typeof obj 
+  // Primitive type
+  return typeof obj
 }
 
 function isObject(obj) {
@@ -88,9 +88,21 @@ function cloneDeep(target, map = new WeakMap()) {
 
   // Array
   if ('array' === type) {
+    let arr = []
+    for (let i = 0; i < target.length; i++) {
+      arr.push(cloneDeep(target[i]))
+    }
+
+    return arr
   }
 
   // Object
   if ('object' === type) {
+    let obj = {}
+    for (let i in target) {
+      obj[i] = cloneDeep(target[i])
+    }
+
+    return obj
   }
 }
