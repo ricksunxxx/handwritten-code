@@ -86,6 +86,15 @@ function cloneDeep(target, map = new WeakMap()) {
     return target
   }
 
+  // Map
+  if ('map' === type) {
+    let map = new Map()
+    for (const key in target) {
+      map.set(key, map.get(key))
+    }
+    return map
+  }
+
   // Resolve circular references
   if (map.get(target)) {
     return target
