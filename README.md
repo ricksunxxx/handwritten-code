@@ -9,3 +9,4 @@
 5. [手写 new 方法](https://github.com/ricksunxxx/handwritten-code/blob/main/src/new.js)
 6. [手写实用的深拷贝方法](https://github.com/ricksunxxx/handwritten-code/blob/main/src/手写实用的深拷贝方法.js)
 7. [手写判断空对象的方法](https://github.com/ricksunxxx/handwritten-code/blob/main/src/手写判断空对象的方法.js)
+8. [手写数组扁平化方法](https://github.com/ricksunxxx/handwritten-code/blob/main/src/手写数组扁平化方法.js)
